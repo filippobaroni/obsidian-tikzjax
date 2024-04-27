@@ -1,5 +1,9 @@
 <img width=275 align="right" src="./imgs/screenshot.png">
 
+# Fork
+
+This fork adds options for default prefix, suffix, and preamble in TikZ codeblocks.
+
 # Obsidian TikZJax
 
 A plugin for Obsidian that lets you render LaTeX and TikZ diagrams in your notes.
