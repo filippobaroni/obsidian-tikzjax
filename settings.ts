@@ -62,7 +62,7 @@ export class TikzjaxSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName("Preamble path")
-			.setDesc("Path to global preamble (requires reload)")
+			.setDesc("Path to global preamble (requires reload).")
 			.addText((text) =>
 				text
 					.setValue(this.plugin.settings.preamblePath)
