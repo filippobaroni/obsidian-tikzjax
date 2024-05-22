@@ -6,9 +6,6 @@ import {
 } from "./settings";
 import { optimize } from "./svgo.browser";
 
-// @ts-ignore
-import tikzjaxJs from "inline:./tikzjax.js";
-
 export default class TikzjaxPlugin extends Plugin {
 	settings: TikzjaxPluginSettings;
 	preamble: string;
@@ -63,11 +60,11 @@ export default class TikzjaxPlugin extends Plugin {
 		await this.saveData(this.settings);
 	}
 
-	loadTikZJax(doc: Document) {
+	async loadTikZJax(doc: Document) {
 		const s = document.createElement("script");
 		s.id = "tikzjax";
 		s.type = "text/javascript";
-		s.innerText = tikzjaxJs;
+		s.innerText = await this.app.vault.adapter.read(`${this.app.vault.configDir}/plugins/obsidian-tikzjax/tikzjax.js`);
 		doc.body.appendChild(s);
 
 		doc.addEventListener("tikzjax-load-finished", this.postProcessSvg);
