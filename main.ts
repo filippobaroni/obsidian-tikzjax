@@ -41,6 +41,8 @@ export default class TikzjaxPlugin extends Plugin {
 		this.addSyntaxHighlighting();
 
 		this.registerTikzCodeBlock();
+
+		
 	}
 
 	onunload() {
@@ -169,7 +171,6 @@ export default class TikzjaxPlugin extends Plugin {
 	optimizeSVG(svg: string) {
 		// Optimize the SVG using SVGO
 		// Fixes misaligned text nodes on mobile
-
 		return optimize(svg, {
 			plugins: [
 				{
